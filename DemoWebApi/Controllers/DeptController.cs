@@ -17,7 +17,7 @@ namespace DemoWebApi.Controllers
         [HttpGet]
         [Route("ListDept")]
         public IActionResult GetDept()
-        {
+        { 
             //var data = db.Depts.ToList();
             //var data = from dept in db.Depts select dept;
             //Suppose we dont want to print all the 20 columns
