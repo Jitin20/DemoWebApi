@@ -28,6 +28,7 @@ namespace DemoWebApi
         {
             services.AddControllers();
             services.AddDbContext<db1045Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("mycon")));
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +40,7 @@ namespace DemoWebApi
             }
 
             app.UseRouting();
+            app.UseCors(options=> { options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin(); });
 
             app.UseAuthorization();
 
